@@ -1,0 +1,351 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'cairo',sans-serif;
+background:linear-gradient(135deg,#f8fbff,#eaf2ff);
+color:#173b73;
+overflow-x:hidden;
+position:relative;
+}
+
+/* خلفية ورد */
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:url("https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?q=80&w=1200") center/cover;
+opacity:.18;
+z-index:-2;
+}
+
+/* قلوب متحركة */
+
+body::after{
+content:"♥ ♥ ♥ ♥ ♥";
+position:fixed;
+bottom:-20px;
+left:0;
+width:100%;
+font-size:30px;
+letter-spacing:60px;
+color:#7da2ff;
+opacity:.3;
+animation:hearts 18s linear infinite;
+z-index:-1;
+}
+
+@keyframes hearts{
+0%{
+transform:translateY(0);
+}
+100%{
+transform:translateY(-120vh);
+}
+}
+
+/* شاشة البداية */
+
+#intro{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.intro-box{
+width:100%;
+max-width:450px;
+background:rgba(255,255,255,.95);
+padding:50px;
+border-radius:35px;
+text-align:center;
+backdrop-filter:blur(12px);
+box-shadow:0 20px 50px rgba(0,0,0,.15);
+animation:floating 4s ease-in-out infinite;
+}
+
+@keyframes floating{
+0%{transform:translateY(0);}
+50%{transform:translateY(-12px);}
+100%{transform:translateY(0);}
+}
+
+.rings{
+font-size:75px;
+margin-bottom:20px;
+}
+
+.intro-box h1{
+font-size:48px;
+line-height:1.8;
+margin-bottom:20px;
+color:#204a92;
+}
+
+.intro-text{
+line-height:2;
+font-size:18px;
+margin-bottom:30px;
+}
+
+button{
+ backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.4);
+border:none;
+padding:18px 45px;
+border-radius:50px;
+cursor:pointer;
+font-size:20px;
+font-weight:bold;
+background:linear-gradient(
+135deg,
+#1d4ed8,
+#60a5fa,
+#93c5fd
+);
+letter-spacing:1px;
+color:white;
+box-shadow:0 10px 30px rgba(63,114,217,.35);
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+#mainPage{
+display:none;
+}
+
+/* البانر */
+
+.hero{
+padding:90px 20px;
+text-align:center;
+}
+
+.hero h1{
+font-size:80px;
+line-height:1.7;
+font-weight:800;
+color:#204a92;
+}
+
+.hero p{
+font-size:20px;
+line-height:2;
+margin-top:15px;
+}
+
+/* العداد */
+
+.countdown{
+padding:50px 20px;
+text-align:center;
+}
+
+.countdown h2{
+margin-bottom:25px;
+font-size:32px;
+}
+
+#timer{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.time-box{
+width:110px;
+height:110px;
+background:white;
+border-radius:25px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.number{
+font-size:36px;
+font-weight:bold;
+color:#204a92;
+}
+
+.label{
+margin-top:8px;
+font-size:15px;
+}
+
+/* الأقسام */
+
+.section{
+padding:70px 20px;
+text-align:center;
+}
+
+.section h2{
+font-size:34px;
+margin-bottom:10px;
+color:#204a92;
+}
+
+.section p{
+line-height:2;
+font-size:18px;
+}
+
+.gold-line{
+width:120px;
+height:4px;
+margin:20px auto;
+border-radius:20px;
+background:linear-gradient(90deg,#6c8fff,#b8cbff);
+}
+
+/* الأزرار */
+
+.map-btn{
+display:inline-block;
+margin-top:20px;
+padding:15px 35px;
+border-radius:40px;
+background:linear-gradient(135deg,#3f72d9,#7aa5ff);
+color:white;
+text-decoration:none;
+font-weight:bold;
+transition:.3s;
+}
+
+.map-btn:hover{
+transform:translateY(-3px);
+}
+
+/* QR */
+
+.qr{
+width:230px;
+height:230px;
+padding:10px;
+background:white;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+margin-top:20px;
+}
+
+/* النهاية */
+
+.footer{
+padding:80px 20px;
+text-align:center;
+}
+
+.footer h2{
+font-size:34px;
+margin-bottom:20px;
+color:#204a92;
+}
+
+.footer p{
+font-size:20px;
+line-height:2;
+}
+
+/* أنيميشن */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+.flower{
+position:fixed;
+top:-50px;
+font-size:24px;
+pointer-events:none;
+animation:fall linear forwards;
+z-index:999;
+opacity:.7;
+}
+
+@keyframes fall{
+
+0%{
+transform:
+translateY(-50px)
+rotate(0deg);
+}
+
+100%{
+transform:
+translateY(110vh)
+rotate(360deg);
+}
+
+}
+.section,
+.hero,
+.countdown,
+.footer{
+
+opacity:0;
+transform:translateY(60px);
+transition:1s;
+
+}
+
+.show{
+
+opacity:1 !important;
+transform:translateY(0) !important;
+
+}
+button{
+position:relative;
+overflow:hidden;
+}
+
+button::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:-100%;
+
+width:100%;
+height:100%;
+
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.4),
+transparent
+);
+
+transition:.8s;
+
+}
+
+button:hover::before{
+
+left:100%;
+
+}
